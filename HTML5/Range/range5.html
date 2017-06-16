@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+</head>
+<body>
+<p id="p">方法技术的考虑尽量</p>
+<button onclick="cloneRange();">clone</button>
+<script>
+    function cloneRange() {
+        var rangeObj = document.createRange();
+        rangeObj.selectNodeContents(document.getElementById("p"));
+        var rangeClone = rangeObj.cloneRange();
+        alert(rangeClone.toString());
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+</head>
+<body>
+<div id="div" style="width: 400px;background-color: beige;" onmouseup="moveButton();">
+    多少减肥快速的健康了
+</div>
+<button id="button">按钮</button>
+<script>
+    function moveButton() {
+        var btn = document.getElementById("button");
+        var selection = document.getSelection();
+        if(selection.rangeCount >0){
+            var range = selection.getRangeAt(0);
+            range.insertNode(btn);
+        }
+    }
+</script>
+</body>
+</html>

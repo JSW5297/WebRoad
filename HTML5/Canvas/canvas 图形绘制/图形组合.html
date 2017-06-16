@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw('canvas')">
+<!-- globalCompositeOperation = type 属性 -->
+<!-- type:https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Compositing -->
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    function draw(id) {
+        var canvas = document.getElementById(id);
+        if (canvas == null)
+            return false;
+        var operations = [
+            'source-atop',
+            'source-in',
+            'source-out',
+            'source-over',
+            'destination-atop',
+            'destination-in',
+            'destination-out',
+            'destination-over',
+            'lighter',
+            'copy',
+            'xor',
+            'darker'
+        ];
+
+        var i = 5;
+
+        var context = canvas.getContext("2d");
+        context.fillStyle = "blue";
+        context.fillRect(10, 10, 60, 60);
+        context.globalCompositeOperation = operations[i];
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(60, 60, 30, 0,Math.PI * 2, true);
+        context.fill();
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw()">
+<!--
+ context.drawImage(img,x,y)
+ context.drawImage(img,x,y,w,h)
+ context.drawImage(img,sx,sy,sw,sh,dx,dy,dw,dh)
+-->
+<canvas id="canvas"></canvas>
+<div>
+    <img id="source" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"
+         width="300" height="227">
+</div>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var image = document.getElementById('source');
+
+        ctx.drawImage(image, 33, 71, 104, 124, 21, 20, 87, 104);
+    }
+</script>
+</body>
+</html>

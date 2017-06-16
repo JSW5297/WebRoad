@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+</head>
+<body>
+<div id="div">
+    啦啦啦
+    <br>
+    <button onclick="cloneContent();">clone</button>
+</div>
+<script>
+    function cloneContent() {
+        var div = document.getElementById("div");
+        var rangeObj = document.createRange();
+        rangeObj.selectNodeContents(div);
+        var content = rangeObj.cloneContents();
+        div.appendChild(content);
+    }
+</script>
+</body>
+</html>
